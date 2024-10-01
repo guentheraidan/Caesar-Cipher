@@ -6,8 +6,7 @@
  * @author Aidan Guenther
  * @date 03/20/2023
  */
-public class Encryption{
-    // Instance variable
+public class CaesarCipher{
     public static String cipherAlphabet;
     public static void getCipherAlphabet(int shift, String ALPHABET){
         // Add all letters from the shift index onwards
