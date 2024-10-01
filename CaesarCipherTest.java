@@ -1,14 +1,14 @@
 /**
  * @purpose Prompt the user to input a shift value and the option of encrypting
  *          or decrypting a desired message using the Caesar shift. Use static
- *          methods of the Encryption class to return a shifted version of the
+ *          methods of the CaesarCipher class to return a shifted version of the
  *          alphabet and encrypt/decrypt a message by a chosen shift.
  *
  * @author Aidan Guenther
  * @date 03/20/2023
  */
 import java.util.Scanner;
-public class CaesarTester{
+public class CaesarCipherTest{
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         String userInput;
@@ -36,9 +36,9 @@ public class CaesarTester{
         // Create an immutable string of the original alphabet
         final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         // Call getCipherAlphabet() to set the shifted alphabet
-        Encryption.getCipherAlphabet(shift, ALPHABET);
+        CaesarCipher.getCipherAlphabet(shift, ALPHABET);
         // Set public static variable as package variable
-        String cipherAlphabet = Encryption.cipherAlphabet;
+        String cipherAlphabet = CaesarCipher.cipherAlphabet;
         
         // Display both alphabets
         System.out.println("\nOriginal Alphabet: " + ALPHABET);
@@ -55,14 +55,14 @@ public class CaesarTester{
                 System.out.println("\nEnter a message to encrypt: ");
                 userInput = input.nextLine();
                 // Call encrypt() to encrypt user input by previous shift
-                output = Encryption.encrypt(ALPHABET, userInput);
+                output = CaesarCipher.encrypt(ALPHABET, userInput);
                 System.out.println("Encrypted message: " + output);
             }
             else if(userInput.equalsIgnoreCase("Decrypt")){
                 System.out.println("\nEnter a message to decrypt: ");
                 userInput = input.nextLine();
                 // Call decrypt() to decrypt user input by previous shift
-                output = Encryption.decrypt(ALPHABET, userInput);
+                output = CaesarCipher.decrypt(ALPHABET, userInput);
                 System.out.println("Decrypted message: " + output);
             }
             else if(userInput.equalsIgnoreCase("Quit")){
